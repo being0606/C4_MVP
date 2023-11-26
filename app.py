@@ -1,5 +1,5 @@
 import streamlit as st
-import folium
+import pandas as pd
 import geocoder
 
 def main():
@@ -20,11 +20,11 @@ def main():
             lat, lon = location.latlng
             st.write(f"현재 위치: 위도 {lat}, 경도 {lon}")
 
-    # Leaflet 지도 생성
-    map = folium.Map(location=[lat, lon], zoom_start=13)
-    marker = folium.Marker([lat, lon], tooltip="내 위치")
-    marker.add_to(map)
-    st.write(map)
+    # 데이터 프레임 생성
+    df = pd.DataFrame({'LAT': [lat], 'LON': [lon]})
+
+    # 지도 시각화
+    st.map(df)
 
 if __name__ == "__main__":
     main()
