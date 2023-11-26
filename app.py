@@ -25,6 +25,10 @@ def main():
 
     # 지도 시각화
     st.map(df)
+    
+    # 음식점 위치를 받기 위한 버튼
+    allow_location = st.button("음식점 위치 허용하기")
+    
 
 if __name__ == "__main__":
     main()
