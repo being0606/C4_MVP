@@ -4,12 +4,12 @@ import geocoder
 
 def main():
     st.title("위치 업데이트 및 지도 표시 앱")
-
-    # 위치 권한을 허용하는 버튼
-    allow_location = st.button("내 위치 허용하기")
-
+    
     # 위치 정보 초기화
     lat, lon = 0, 0
+    
+    # 위치 권한을 허용하는 버튼
+    allow_location = st.button("내 위치 허용하기")
 
     # 위치 권한을 허용한 경우
     if allow_location:
